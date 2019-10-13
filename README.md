@@ -42,19 +42,26 @@
 
 ### Endpoints:
 create order:
+
     POST /api/orders
 
-update order, statuses: 'new', 'processed', 'transferred', 'completed', 'canceled'
+update order:
+
     PUT  /api/orders
 
 JSON data example:
-    {
-    	"status": "canceled"
-    }
+
+{
+    "status": "canceled"
+}
+
 or
-    {
-        "product_ids": [1, 2]
-    }
+
+{
+    "product_ids": [1, 2]
+}
+
+**Statuses:** 'new', 'processed', 'transferred', 'completed', 'canceled'.
 
 ## Console commands
 
@@ -62,6 +69,7 @@ or
 2. php artisan order:update {orderId} {--status=} {--product_id=*}
 
 Example:
+
     php artisan order:create
     php artisan order:update 1 --product_id=2 --product_id=3
     php artisan order:update 1 --status=processed
